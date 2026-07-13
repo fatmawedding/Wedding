@@ -142,4 +142,53 @@
 
 </body>
 
-</html>
+</html> 
+<!-- Countdown -->
+
+<div class="info">
+
+  <h2>باقي على الفرح ❤️</h2>
+
+  <div id="countdown" style="font-size:25px; font-weight:bold;"></div>
+
+</div>
+
+<script>
+
+const weddingDate = new Date("August 28, 2026 19:30:00").getTime();
+
+const timer = setInterval(function(){
+
+  const now = new Date().getTime();
+
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+
+  days + " يوم ❤️ " +
+
+  hours + " ساعة ❤️ " +
+
+  minutes + " دقيقة ❤️ " +
+
+  seconds + " ثانية";
+
+  if(distance < 0){
+
+    clearInterval(timer);
+
+    document.getElementById("countdown").innerHTML = "اليوم فرحنا ❤️";
+
+  }
+
+},1000);
+
+</script>
